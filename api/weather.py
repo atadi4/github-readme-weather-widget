@@ -73,7 +73,7 @@ def get_weather_widget():
     global config
     weather_data = json.loads(requests.get(OPENWEATHERMAP_API_URL).text)
     print(weather_data)
-    current_time = datetime.fromtimestamp(weather_data["dt"] + UTC_BALANCE).strftime("%d %B, %Y - %I:%M:%S %p")
+    current_time = datetime.fromtimestamp(weather_data["dt"] + (UTC_BALANCE * 3600)).strftime("%d %B, %Y - %I:%M:%S %p")
     temperature = pytemperature.k2c(weather_data["main"]["temp"])
     feels_like = pytemperature.k2c(weather_data["main"]["feels_like"])
     max_temperature = pytemperature.k2c(weather_data["main"]["temp_max"])
