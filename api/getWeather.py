@@ -191,9 +191,8 @@ def generate_svg(city, country, weather_data):
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path):
-    # user_ip = get_userip()
-    # city, country = get_user_location(user_ip)
-    city = config["location"]["city"]  # 使用配置文件中的城市
+    user_ip = get_userip()
+    city, country = get_user_location(user_ip)
     svg = get_weather_widget(city,)
     weather_forecast = get_weather_forecast(city)
     svg_image = generate_svg(city, country, weather_forecast)
