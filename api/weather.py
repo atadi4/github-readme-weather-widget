@@ -11,9 +11,9 @@ import requests
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask, Response, render_template
 
-GITHUB_USERNAME = "Charmve"
+GITHUB_USERNAME = "atadi4"
 GITHUB_REPO = "github-readme-weather-widget"
-GIT_BRANCH = "master"
+GIT_BRANCH = "main"
 
 CONFIG_FILE_URL = "https://raw.githubusercontent.com/{}/{}/{}/api/config.ini".format(GITHUB_USERNAME,
                                                                                      GITHUB_REPO,
